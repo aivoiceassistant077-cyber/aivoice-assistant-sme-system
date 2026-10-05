@@ -1,0 +1,14 @@
+{
+  "language": "Mende",
+  "NOTE": "STARTER FILE. The group must sit with a native Mende speaker and add real Mende words here (see Beginner Guide, Part 11). Until words are added the assistant still works because many business words are code-mixed with Krio/English.",
+  "intents": {
+    "record_sale": [], "add_stock": [], "check_stock": [], "low_stock": [], "register_customer": [],
+    "schedule_appointment": [], "daily_summary": [], "monthly_report": [], "check_price": [],
+    "list_appointments": [], "greeting": [], "help": []
+  },
+  "stopwords": [],
+  "number_words": {},
+  "customer_markers": [],
+  "price_markers": [],
+  "phone_markers": []
+}

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Voice Business Assistant</string>
+    <!--
+      SERVER ADDRESS
+      Android emulator : http://10.0.2.2:5000   (10.0.2.2 means "the laptop")
+      Real phone       : http://YOUR-LAPTOP-IP:5000  (phone and laptop must use the same Wi-Fi,
+                         and the server must be started with HOST=0.0.0.0)
+    -->
+    <string name="server_url">http://10.0.2.2:5000</string>
+</resources>

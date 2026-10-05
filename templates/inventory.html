@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Inventory{% endblock %}
+{% block content %}
+<h2>Inventory</h2>
+<div class="card">
+  <h3>Add a new product</h3>
+  <form method="post" class="inline-form">
+    <input name="name" placeholder="Product name (e.g. rice)" required>
+    <input name="aliases" placeholder="Other names, separated by commas (e.g. ris)">
+    <input name="quantity" type="number" min="0" placeholder="Quantity" required>
+    <input name="price" type="number" min="0" step="any" placeholder="Price ({{ currency }})" required>
+    <input name="reorder_level" type="number" min="0" placeholder="Low-stock level" value="5">
+    <button class="btn">Add product</button>
+  </form>
+</div>
+<div class="card">
+  <table>
+    <tr><th>#</th><th>Product</th><th>Other names</th><th>Quantity</th><th>Price ({{ currency }})</th><th>Status</th>{% if g.user['role']=='owner' %}<th></th>{% endif %}</tr>
+    {% for p in products %}
+    <tr>
+      <td>{{ p['id'] }}</td><td>{{ p['name'] }}</td><td>{{ p['aliases'] }}</td><td>{{ p['quantity'] }}</td>
+      <td>{{ '{:,.0f}'.format(p['price']) }}</td>
+      <td>{% if p['quantity'] <= p['reorder_level'] %}<span class="tag red">Low stock</span>{% else %}<span class="tag green">OK</span>{% endif %}</td>
+      {% if g.user['role']=='owner' %}<td><form method="post" action="{{ url_for('delete_product', pid=p['id']) }}" onsubmit="return confirm('Delete this product?')"><button class="link-btn">Delete</button></form></td>{% endif %}
+    </tr>
+    {% else %}<tr><td colspan="7" class="muted">No products yet.</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

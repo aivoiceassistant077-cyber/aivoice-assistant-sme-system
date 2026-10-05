@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Assistant{% endblock %}
+{% block content %}
+<div class="assistant">
+  <section class="card chat">
+    <h2>Talk to your assistant</h2>
+    <div id="log" class="log" aria-live="polite">
+      <div class="bubble bot">Hello {{ g.user['name'] }}! Press the microphone and speak, or type a command below.</div>
+    </div>
+    <div class="controls">
+      <button id="micBtn" class="mic" title="Press to speak">&#127908;</button>
+      <input id="textInput" placeholder="Type a command, e.g. sold 3 bags of rice to Mariama" autocomplete="off">
+      <button id="sendBtn" class="btn">Send</button>
+    </div>
+    <div class="options">
+      <label>Language:
+        <select id="langSel">
+          <option value="auto">Auto-detect</option>
+          <option value="en-GB">English</option>
+          <option value="kri">Krio</option>
+          <option value="men">Mende</option>
+          <option value="tem">Temne</option>
+        </select>
+      </label>
+      <label>Listening engine:
+        <select id="engineSel">
+          <option value="auto">Automatic</option>
+          <option value="whisper">Whisper (server)</option>
+          <option value="browser">Browser microphone</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="speakChk" checked> Speak the reply</label>
+    </div>
+    <p id="statusLine" class="muted">Checking voice engines...</p>
+  </section>
+  <aside class="card tips">
+    <h3>Try saying</h3>
+    <ul class="chips">
+      <li data-say="sold 3 bags of rice to Mariama">sold 3 bags of rice to Mariama</li>
+      <li data-say="how many rice do I have">how many rice do I have</li>
+      <li data-say="add 20 bags of rice at 150">add 20 bags of rice at 150</li>
+      <li data-say="what is the price of sugar">what is the price of sugar</li>
+      <li data-say="show low stock">show low stock</li>
+      <li data-say="register customer Fatmata Sesay phone 076123456">register customer Fatmata Sesay phone 076123456</li>
+      <li data-say="book appointment for Fatmata tomorrow at 10:30">book appointment for Fatmata tomorrow at 10:30</li>
+      <li data-say="how much did I make today">how much did I make today</li>
+      <li data-say="mi don sel tri ris to Mariama">mi don sel tri ris to Mariama (Krio)</li>
+      <li data-say="omos ris de lef">omos ris de lef (Krio)</li>
+      <li data-say="what time do you open">what time do you open</li>
+    </ul>
+    <p class="muted">Click any sentence to run it.</p>
+  </aside>
+</div>
+<script src="{{ url_for('static', filename='js/assistant.js') }}"></script>
+{% endblock %}

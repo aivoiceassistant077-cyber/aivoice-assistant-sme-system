@@ -1,0 +1,197 @@
+{
+  "language": "Krio",
+  "intents": {
+    "record_sale": [
+      "sel",
+      "mi don sel",
+      "a sel",
+      "i sel",
+      "yu sel",
+      "rayt sel",
+      "sale"
+    ],
+    "add_stock": [
+      "put",
+      "add",
+      "bring",
+      "mi don bay",
+      "a bay",
+      "ad",
+      "stok in",
+      "put am"
+    ],
+    "check_stock": [
+      "omos",
+      "omos we de lef",
+      "aw mɔch",
+      "aw mach",
+      "wetin de lef",
+      "check stok",
+      "stok fɔ"
+    ],
+    "low_stock": [
+      "stok lɔw",
+      "de finish",
+      "de dɔn",
+      "wetin de finish",
+      "ting dɛm we de finish"
+    ],
+    "register_customer": [
+      "rɛjista kɔstoma",
+      "nyu kɔstoma",
+      "rejista kostoma",
+      "nyu kostoma",
+      "rɛjista",
+      "rejista"
+    ],
+    "schedule_appointment": [
+      "apɔyntmɛnt",
+      "apointment",
+      "buk",
+      "mek apɔyntmɛnt",
+      "arɛnj"
+    ],
+    "daily_summary": [
+      "tide",
+      "ɔl tide",
+      "sɔmri fɔ tide",
+      "aw mi mek tide",
+      "aw mɔch mi mek tide",
+      "tide rapɔt"
+    ],
+    "monthly_report": [
+      "dis mɔnt",
+      "mɔnt rapɔt",
+      "mont rapot",
+      "dis mont"
+    ],
+    "check_price": [
+      "pris fɔ",
+      "pris fo",
+      "aw mɔch na",
+      "aw much na",
+      "omos na",
+      "omos fɔ"
+    ],
+    "list_appointments": [
+      "mi apɔyntmɛnt",
+      "apɔyntmɛnt dɛm",
+      "sho apɔyntmɛnt"
+    ],
+    "greeting": [
+      "hɔw di bɔdi",
+      "aw di bodi",
+      "kushɛ",
+      "kushe",
+      "gud mɔnin",
+      "gud mornin",
+      "gud ivin",
+      "gud aftanun",
+      "alo"
+    ],
+    "help": [
+      "ɛp",
+      "ep",
+      "hɛp",
+      "wetin yu go du",
+      "wetin yu kin du"
+    ]
+  },
+  "stopwords": [
+    "am",
+    "bag",
+    "bagz",
+    "bɔt",
+    "bɔtul",
+    "bɔtul dɛm",
+    "de",
+    "dem",
+    "di",
+    "don",
+    "dɔn",
+    "dɛm",
+    "en",
+    "fɔ",
+    "go",
+    "mi",
+    "na",
+    "pak",
+    "pan",
+    "pis",
+    "pis dɛm",
+    "pleez",
+    "pliz",
+    "pls",
+    "we",
+    "wit",
+    "yu",
+    "ɔl",
+    "ɛn"
+  ],
+  "number_words": {
+    "nɔto": 0,
+    "zero": 0,
+    "wan": 1,
+    "tu": 2,
+    "tri": 3,
+    "faiv": 5,
+    "sik": 6,
+    "sikis": 6,
+    "sɛvin": 7,
+    "sevin": 7,
+    "et": 8,
+    "nayn": 9,
+    "ten": 10,
+    "ilɛvin": 11,
+    "twɛnti": 20,
+    "twenti": 20,
+    "tati": 30,
+    "fɔti": 40,
+    "foti": 40,
+    "fifti": 50,
+    "sikisti": 60,
+    "sɛvinti": 70,
+    "eti": 80,
+    "naynti": 90,
+    "hɔndrɛd": 100,
+    "hondred": 100,
+    "tawzin": 1000,
+    "tausin": 1000
+  },
+  "customer_markers": [
+    "gi",
+    "to",
+    "fɔ",
+    "kɔstoma",
+    "kostoma",
+    "nem"
+  ],
+  "price_markers": [
+    "fɔ",
+    "fo",
+    "pris",
+    "ɛni wan",
+    "wan wan"
+  ],
+  "phone_markers": [
+    "fon",
+    "nɔmba",
+    "nomba",
+    "kɔntak"
+  ],
+  "_note_numbers": "'fɔ' (four) is NOT listed as a number word because 'fɔ' also means 'for' in Krio. Whisper normally writes numbers as digits anyway.",
+  "product_aliases": {
+    "ris": "rice",
+    "sugah": "sugar",
+    "suga": "sugar",
+    "inyin": "onion",
+    "grɔndnɔt": "groundnut",
+    "pam oyl": "palm oil",
+    "red oyl": "palm oil",
+    "bred": "bread",
+    "mit": "meat",
+    "sɔp": "soap",
+    "oyl": "cooking oil",
+    "tomato pes": "tomato paste"
+  }
+}

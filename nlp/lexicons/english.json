@@ -1,0 +1,28 @@
+{
+  "language": "English",
+  "intents": {
+    "record_sale":   ["sold", "sell", "sale", "sales of", "record sale", "i sold", "bought by"],
+    "add_stock":     ["add", "restock", "received", "stock in", "new stock", "purchased", "bring in"],
+    "check_stock":   ["how many", "stock of", "check stock", "do i have", "left of", "remaining", "in stock"],
+    "low_stock":     ["low stock", "running out", "finishing", "need to restock", "out of stock"],
+    "register_customer": ["register customer", "new customer", "add customer", "save customer", "register"],
+    "schedule_appointment": ["appointment", "book", "schedule", "booking", "reserve"],
+    "daily_summary": ["today", "daily summary", "daily report", "summary of today", "how much did i make"],
+    "monthly_report":["this month", "monthly report", "monthly summary", "month report"],
+    "check_price":   ["price of", "how much is", "how much are", "cost of", "what is the price"],
+    "list_appointments": ["list appointments", "my appointments", "show appointments", "upcoming appointments"],
+    "greeting":      ["hello", "hi", "good morning", "good afternoon", "good evening", "hey"],
+    "help":          ["help", "what can you do", "commands", "how do i use"]
+  },
+  "stopwords": ["the", "a", "an", "of", "to", "for", "and", "please", "my", "i", "me", "some", "bags", "bag", "pieces", "piece", "units", "unit", "bottles", "bottle", "packs", "pack", "cartons", "carton", "at", "each", "price", "in", "from", "have", "do", "is", "are", "was", "were", "with", "on", "am", "now", "just"],
+  "number_words": {
+    "zero":0,"one":1,"two":2,"three":3,"four":4,"five":5,"six":6,"seven":7,"eight":8,"nine":9,"ten":10,
+    "eleven":11,"twelve":12,"thirteen":13,"fourteen":14,"fifteen":15,"sixteen":16,"seventeen":17,
+    "eighteen":18,"nineteen":19,"twenty":20,"thirty":30,"forty":40,"fifty":50,"sixty":60,"seventy":70,
+    "eighty":80,"ninety":90,"hundred":100,"thousand":1000
+  },
+  "to_word": "to",
+  "customer_markers": ["to", "for", "customer", "named", "called"],
+  "price_markers": ["at", "for", "price", "each"],
+  "phone_markers": ["phone", "number", "contact"]
+}

@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+instance/*
+!instance/.gitkeep
+.pytest_cache/
+*.db
+.env
+android_app/.gradle/
+android_app/build/
+android_app/app/build/
+local.properties
+.idea/

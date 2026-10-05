@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Appointments{% endblock %}
+{% block content %}
+<h2>Appointments</h2>
+<div class="card">
+  <form method="post" class="inline-form">
+    <input name="customer_name" placeholder="Customer name" required>
+    <input name="appt_date" type="date" required>
+    <input name="appt_time" type="time">
+    <input name="note" placeholder="Note (optional)">
+    <button class="btn">Save appointment</button>
+  </form>
+</div>
+<div class="card">
+  <table>
+    <tr><th>#</th><th>Customer</th><th>Date</th><th>Time</th><th>Note</th><th>Status</th><th></th></tr>
+    {% for a in appointments %}
+    <tr><td>{{ a['id'] }}</td><td>{{ a['customer_name'] }}</td><td>{{ a['appt_date'] }}</td><td>{{ a['appt_time'] or '' }}</td><td>{{ a['note'] or '' }}</td>
+      <td><span class="tag {{ 'green' if a['status']=='completed' else 'blue' }}">{{ a['status'] }}</span></td>
+      <td>{% if a['status']=='scheduled' %}<form method="post" action="{{ url_for('appointment_done', aid=a['id']) }}"><button class="link-btn">Mark done</button></form>{% endif %}</td></tr>
+    {% else %}<tr><td colspan="7" class="muted">No appointments yet.</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

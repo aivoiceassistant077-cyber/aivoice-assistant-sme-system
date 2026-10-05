@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Sales{% endblock %}
+{% block content %}
+<h2>Sales Records</h2>
+<p class="muted">Sales are recorded by voice or text on the Assistant page.</p>
+<div class="card">
+  <table>
+    <tr><th>#</th><th>Date</th><th>Product</th><th>Customer</th><th>Qty</th><th>Unit price ({{ currency }})</th><th>Total ({{ currency }})</th></tr>
+    {% for s in sales %}
+    <tr><td>{{ s['id'] }}</td><td>{{ s['sale_date'] }}</td><td>{{ s['product'] }}</td><td>{{ s['customer'] or 'Walk-in' }}</td>
+        <td>{{ s['quantity'] }}</td><td>{{ '{:,.0f}'.format(s['unit_price']) }}</td><td>{{ '{:,.0f}'.format(s['total']) }}</td></tr>
+    {% else %}<tr><td colspan="7" class="muted">No sales yet.</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

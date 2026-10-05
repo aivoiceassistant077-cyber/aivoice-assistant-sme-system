@@ -1,0 +1,5 @@
+# Optional heavy packages for real speech. Install ONLY after the main system works.
+# Whisper also needs FFmpeg installed on the computer.
+openai-whisper
+# Coqui TTS works on Python 3.9, 3.10 or 3.11 only.
+TTS

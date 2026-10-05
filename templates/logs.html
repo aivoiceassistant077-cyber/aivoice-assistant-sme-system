@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Voice Logs{% endblock %}
+{% block content %}
+<h2>Voice Command Logs</h2>
+<div class="card">
+  <table>
+    <tr><th>Time</th><th>User</th><th>Language</th><th>What was said</th><th>Intent</th><th>Reply</th><th>Result</th></tr>
+    {% for l in logs %}
+    <tr><td>{{ l['created_at'] }}</td><td>{{ l['username'] }}</td><td>{{ l['language'] }}</td><td>{{ l['transcript'] }}</td>
+      <td>{{ l['intent'] or '-' }}</td><td>{{ l['response'] }}</td>
+      <td><span class="tag {{ 'green' if l['success'] else 'red' }}">{{ 'Success' if l['success'] else 'Failed' }}</span></td></tr>
+    {% else %}<tr><td colspan="7" class="muted">No commands yet.</td></tr>{% endfor %}
+  </table>
+</div>
+{% endblock %}

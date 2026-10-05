@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Reports{% endblock %}
+{% block content %}
+<h2>Business Reports</h2>
+<div class="grid3">
+  <div class="card stat"><div class="muted">Today's sales</div><div class="big">{{ currency }} {{ '{:,.0f}'.format(today['t']) }}</div><div>{{ today['c'] }} transactions</div></div>
+  <div class="card stat"><div class="muted">This month</div><div class="big">{{ currency }} {{ '{:,.0f}'.format(month['t']) }}</div><div>{{ month['c'] }} transactions</div></div>
+  <div class="card stat"><div class="muted">Low-stock products</div><div class="big">{{ low|length }}</div><div>need restocking</div></div>
+</div>
+<div class="grid2">
+  <div class="card">
+    <h3>Sales in the last 7 days</h3>
+    {% for r in last7 %}
+    <div class="bar-row"><span class="bar-label">{{ r['d'] }}</span>
+      <span class="bar"><span style="width: {{ (r['t'] / biggest * 100)|round|int }}%"></span></span>
+      <span class="bar-val">{{ '{:,.0f}'.format(r['t']) }}</span></div>
+    {% else %}<p class="muted">No sales in the last 7 days.</p>{% endfor %}
+  </div>
+  <div class="card">
+    <h3>Top 5 products</h3>
+    <table><tr><th>Product</th><th>Qty sold</th><th>Revenue ({{ currency }})</th></tr>
+    {% for t in top %}<tr><td>{{ t['name'] }}</td><td>{{ t['qty'] }}</td><td>{{ '{:,.0f}'.format(t['revenue']) }}</td></tr>
+    {% else %}<tr><td colspan="3" class="muted">No data yet.</td></tr>{% endfor %}</table>
+  </div>
+</div>
+<div class="card">
+  <h3>Products that need restocking</h3>
+  <table><tr><th>Product</th><th>Quantity left</th><th>Low-stock level</th></tr>
+  {% for p in low %}<tr><td>{{ p['name'] }}</td><td>{{ p['quantity'] }}</td><td>{{ p['reorder_level'] }}</td></tr>
+  {% else %}<tr><td colspan="3" class="muted">All products have enough stock.</td></tr>{% endfor %}</table>
+</div>
+{% endblock %}
